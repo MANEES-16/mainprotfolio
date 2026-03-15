@@ -1,0 +1,129 @@
+.projects {
+  padding: 110px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 54px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.project-card {
+  background: var(--card);
+  padding: 34px;
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+  --mx: 50%;
+  --my: 50%;
+}
+
+.project-card:hover {
+  background: #18181f;
+}
+
+.project-card.featured {
+  grid-column: span 2;
+}
+
+.project-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mx) var(--my),
+    rgba(127, 255, 110, 0.06),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.project-card:hover .project-glow {
+  opacity: 1;
+}
+
+.project-num {
+  font-size: 0.64rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-num::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 50px;
+}
+
+.project-type {
+  font-size: 0.64rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.project-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.project-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.stack-tag {
+  font-size: 0.64rem;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: gap 0.2s;
+}
+
+.project-link:hover {
+  gap: 14px;
+}
